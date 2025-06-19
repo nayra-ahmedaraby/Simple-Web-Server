@@ -1,0 +1,6 @@
+{
+    "port": 6789,
+    "default_page": "HelloWorld.html",
+    "max_request_size": 2048    
+}
+  

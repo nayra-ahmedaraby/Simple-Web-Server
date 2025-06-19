@@ -1,0 +1,32 @@
+PROJECT FEATURES:
+
+- Support for Multiple file types
+- Request Size limitation for security and speed
+- Custom Configs
+- Server Status page
+- Error Handling
+- Multithreading
+--------------------
+
+PROJECT IMPLEMENTATION:
+
+1. Imports and configuration:
+The server uses the 'socket' module to create and handle TCP/IP connections.
+The threading module is used to handle multiple connection requests simultaneously.
+The json module handles JSON files.
+The mimetypes module helps determine the MIME type of files based on extensions.
+
+2. Server Configuration:
+Configuration is loaded from 'config.json' which contains configurations for the port, default home page, and request size limit.
+
+3. Handling Requests:
+The handle_request() function receives a connection socket and client address, processes the request and returns a structured HTTP response.
+The request is parsed to determine the file being requested, if none is specified it redirects to DEFAULT_PAGE, if it does not exist, redirect to 404 page. If it does exist, it reads from disk and structures a response.
+
+4. Multithreading:
+The server is designed to handle requests concurrently using Python's threading module, this allows the server to serve multiple clients without blocking.
+
+5. Server Status:
+A special route (/status) is implemented to show the server's uptime since it started. This can be useful for monitoring the server's performance.
+
+
